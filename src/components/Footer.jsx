@@ -10,6 +10,8 @@ import {
   FiArrowUpRight,
 } from "react-icons/fi";
 
+import logo from "../assets/logo.png";
+
 const Footer = () => {
   const quickLinks = [
     { name: "Home", path: "/" },
@@ -22,31 +24,21 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0b1220] text-white">
-
       {/* Main Footer */}
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
           {/* School Info */}
           <div className="lg:pr-8">
 
-            <Link
-              to="/"
-              className="inline-flex items-center gap-3"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-lg font-bold text-[#0f172a] shadow-lg">
-                IK
-              </div>
-
-              <div>
-                <h2 className="text-lg font-bold">
-                  Ibn Khaldun
-                </h2>
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-blue-400">
-                  Model High School
-                </p>
+            {/* Logo Only */}
+            <Link to="/" className="inline-flex">
+              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white">
+                <img
+                  src={logo}
+                  alt="Ibn Khaldun Model High School"
+                  className="h-14 w-14 object-contain"
+                />
               </div>
             </Link>
 
@@ -63,7 +55,6 @@ const Footer = () => {
               Learn More
               <FiArrowUpRight />
             </Link>
-
           </div>
 
           {/* Quick Links */}
@@ -73,7 +64,6 @@ const Footer = () => {
             </h3>
 
             <div className="flex flex-col gap-3">
-
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -83,7 +73,6 @@ const Footer = () => {
                   {link.name}
                 </Link>
               ))}
-
             </div>
           </div>
 
@@ -95,6 +84,7 @@ const Footer = () => {
 
             <div className="flex flex-col gap-5">
 
+              {/* Address */}
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
                   <FiMapPin />
@@ -111,6 +101,7 @@ const Footer = () => {
                 </div>
               </div>
 
+              {/* Phone */}
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
                   <FiPhone />
@@ -127,6 +118,7 @@ const Footer = () => {
                 </div>
               </div>
 
+              {/* Email */}
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
                   <FiMail />
@@ -159,6 +151,7 @@ const Footer = () => {
 
             <div className="mt-6 flex gap-3">
 
+              {/* Facebook */}
               <a
                 href="#"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-300 transition hover:border-blue-500/30 hover:bg-blue-500 hover:text-white"
@@ -166,6 +159,7 @@ const Footer = () => {
                 <FiFacebook />
               </a>
 
+              {/* Instagram */}
               <a
                 href="#"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-300 transition hover:border-pink-500/30 hover:bg-pink-500 hover:text-white"
@@ -173,6 +167,7 @@ const Footer = () => {
                 <FiInstagram />
               </a>
 
+              {/* YouTube */}
               <a
                 href="#"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-300 transition hover:border-red-500/30 hover:bg-red-500 hover:text-white"
@@ -200,14 +195,11 @@ const Footer = () => {
                 <FiArrowUpRight />
               </Link>
             </div>
-
           </div>
-
         </div>
 
         {/* Bottom Footer */}
         <div className="mt-14 border-t border-white/10 pt-7">
-
           <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
 
             <p className="text-xs text-gray-500">
@@ -228,9 +220,7 @@ const Footer = () => {
             </div>
 
           </div>
-
         </div>
-
       </div>
     </footer>
   );

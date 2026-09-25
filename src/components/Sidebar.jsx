@@ -14,6 +14,8 @@ import {
   FiHome,
 } from "react-icons/fi";
 
+import logo from "../assets/logo.png";
+
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -65,25 +67,19 @@ const Sidebar = () => {
       {/* MOBILE HEADER */}
       <div className="fixed left-0 right-0 top-0 z-40 flex h-16 items-center justify-between border-b border-white/[0.07] bg-[#07070a] px-4 lg:hidden">
 
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">
-            IK
-          </div>
+        {/* Logo Only */}
+        <NavLink to="/" onClick={() => setIsOpen(false)}>
+          <img
+            src={logo}
+            alt="Ibn Khaldun Model High School"
+            className="h-11 w-11 object-contain"
+          />
+        </NavLink>
 
-          <div>
-            <h1 className="text-sm font-bold text-white">
-              Ibn Khaldun
-            </h1>
-
-            <p className="text-[9px] uppercase tracking-wider text-blue-400">
-              Admin Portal
-            </p>
-          </div>
-        </div>
-
+        {/* Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-xl border border-white/10 p-2 text-gray-400 hover:bg-white/5 hover:text-white"
+          className="rounded-xl border border-white/10 p-2 text-gray-400 transition hover:bg-white/5 hover:text-white"
         >
           {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
         </button>
@@ -105,21 +101,19 @@ const Sidebar = () => {
       >
 
         {/* LOGO */}
-        <div className="flex h-20 items-center gap-3 border-b border-white/[0.07] px-6">
+        <div className="flex h-20 items-center border-b border-white/[0.07] px-6">
 
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20">
-            IK
-          </div>
-
-          <div>
-            <h1 className="font-bold text-white">
-              Ibn Khaldun
-            </h1>
-
-            <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-blue-400">
-              Admin Portal
-            </p>
-          </div>
+          <NavLink
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center"
+          >
+            <img
+              src={logo}
+              alt="Ibn Khaldun Model High School"
+              className="h-12 w-12 object-contain"
+            />
+          </NavLink>
 
         </div>
 
